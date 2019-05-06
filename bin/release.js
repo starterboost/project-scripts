@@ -4,8 +4,7 @@ const exec = require('child-process-promise').exec;
 const _ = require('lodash');
 const Promise = require('bluebird');
 
-
-console.log('release?');
+console.log('releasing project...');
 handleExec( exec('git status') )
 .then( ( status ) => {
 	if( _.find( status.split('\n'), item => {
