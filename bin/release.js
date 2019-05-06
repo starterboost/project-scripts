@@ -35,13 +35,13 @@ handleExec( exec('git status') )
 					const [match,team,repo] = /([a-zA-Z0-9\-_]+)\/([a-zA-Z0-9\-_]+).git/.exec( origin );
 					const teamId = _.replace(_.lowerCase(team),' ','');
 					const pckg = require('../package.json');
-					const cmdInstall = `yarn add ${team}/${repo}#${version}`;
+					const cmdInstallAndUpdate = `yarn add ${team}/${repo}#${version}`;
 					
 					console.log('update your dependencies...\n');
-					console.log( `${cmdInstall}\n-or-...` );
+					console.log( `${cmdInstallAndUpdate}\n-or-...` );
 					console.log( `copy paste from the clipboard...` );
 					//add the last option to clipboard
-					clipboardy.writeSync()
+					clipboardy.writeSync(cmdInstallAndUpdate);
 				} );
 	
 			} )
