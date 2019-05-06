@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const exec = require('child-process-promise').exec;
 const _ = require('lodash');
 const Promise = require('bluebird');
