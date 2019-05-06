@@ -1,0 +1,18 @@
+{
+  "name": "@starterboost/project-scripts",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Jimib",
+  "license": "MIT",
+  "scripts":{
+    "release": "node bin/release.js"
+  },
+  "bin": {
+    "project-release": "bin/release.js"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.4",
+    "child-process-promise": "^2.2.1",
+    "lodash": "^4.17.11"
+  }
+}
