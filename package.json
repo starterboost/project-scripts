@@ -13,6 +13,7 @@
   "dependencies": {
     "bluebird": "^3.5.4",
     "child-process-promise": "^2.2.1",
+    "clipboardy": "^2.0.0",
     "lodash": "^4.17.11"
   }
 }

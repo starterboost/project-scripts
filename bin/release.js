@@ -3,6 +3,7 @@
 const exec = require('child-process-promise').exec;
 const _ = require('lodash');
 const Promise = require('bluebird');
+const clipboardy = require('clipboardy');
 
 console.log('releasing project...');
 handleExec( exec('git status') )
@@ -34,10 +35,13 @@ handleExec( exec('git status') )
 					const [match,team,repo] = /([a-zA-Z0-9\-_]+)\/([a-zA-Z0-9\-_]+).git/.exec( origin );
 					const teamId = _.replace(_.lowerCase(team),' ','');
 					const pckg = require('../package.json');
+					const cmdInstall = `yarn add ${team}/${repo}#${version}`;
+					
 					console.log('update your dependencies...\n');
-					console.log( `https://github.com/${team}/${repo}/releases/tag/${version}\n-or-` );
-					console.log( `"${pckg.name}": "github:${teamId}/${repo}#${version}"\n-or-` );
-					console.log( `yarn add ${team}/${repo}#${version}\n...` );
+					console.log( `${cmdInstall}\n-or-...` );
+					console.log( `copy paste from the clipboard...` );
+					//add the last option to clipboard
+					clipboardy.writeSync()
 				} );
 	
 			} )
