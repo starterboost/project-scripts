@@ -37,9 +37,9 @@ handleExec( exec('git status') )
 					const pckg = require('../package.json');
 					const cmdInstallAndUpdate = `yarn add ${team}/${repo}#${version}`;
 					
-					console.log('update your dependencies...\n');
-					console.log( `${cmdInstallAndUpdate}\n-or-...` );
-					console.log( `copy paste from the clipboard...` );
+					console.log('\nupdate your dependencies...\n');
+					console.log( `${cmdInstallAndUpdate}\n\n-or-...\n` );
+					console.log( `copy paste from the clipboard...\n\n` );
 					//add the last option to clipboard
 					clipboardy.writeSync(cmdInstallAndUpdate);
 				} );
